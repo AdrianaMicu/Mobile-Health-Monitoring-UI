@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>Mobile Health Monitoring GUI</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="http://www.amcharts.com/lib/3/amcharts.js"></script>
+		<script src="http://www.amcharts.com/lib/3/serial.js"></script>
+		<script src="http://www.amcharts.com/lib/3/themes/none.js"></script>
+	</head>
+
+	<body>
+	<div ng-controller="Hello">
+		<div id="chartdiv" style="width: 100%; height: 500px;"></div>	
+			
+		<div id="aboutData" style="width: 60%; height: 800px; padding: 20px; margin-left:30px;"> <!-- border-radius: 25px; border: 2px solid #8AC007; -->
+		<div id="title" style="padding-left:20px; padding-top:10px; font-family: Arial; font-size: 150%;">List of Observations:</div>
+		
+			<div id="totalTimeTitle" style="padding-left:20px; padding-top:10px; font-family: Arial; font-size: 100%;">
+				Total time: <span id="totalTime" style="font-family: Arial; font-size: 100%;"></span>
+			</div>
+			
+			<div id="totalRestingTimeTitle" style="padding-left:20px; padding-top:10px; font-family: Arial; font-size: 100%;">
+				Total resting time: <span id="totalRestingTime" style="font-family: Arial; font-size: 100%;"></span> with mean heartrate: <span id="meanRestingHR" style="font-family: Arial; font-size: 100%;"></span>
+				<div id="stressPeriodsTitle" style="padding-left:20px; padding-top:10px;">
+				Stress periods: <span id="stressPeriodsNumber" style="font-family: Arial; font-size: 100%;"></span> which lasted: <span id="stressPeriodsTime" style="font-family: Arial; font-size: 100%;"></span> with mean heartrate: <span id="stressPeriodsMeanHR" style="font-family: Arial; font-size: 100%;"></span>
+				</div>
+			</div>
+		
+			<div id="totalMovingTimeTitle" style="padding-left:20px; padding-top:10px; font-family: Arial; font-size: 100%;">
+				Total moving time: <span id="totalMovingTime" style="font-family: Arial; font-size: 100%;"></span> with mean heartrate: <span id="meanMovingHR" style="font-family: Arial; font-size: 100%;"></span>
+				<div id="movingPeriodsTitle" style="padding-left:20px; padding-top:10px;">
+				<div>very low intensity periods: <span id="vlowPeriodsNumber" style="font-family: Arial; font-size: 100%;"></span> which lasted: <span id="vlowPeriodsTime" style="font-family: Arial; font-size: 100%;"></span> with mean heartrate: <span id="vlowPeriodsMeanHR" style="font-family: Arial; font-size: 100%;"></span></div>
+				<div>low intensity periods: <span id="lowPeriodsNumber" style="font-family: Arial; font-size: 100%;"></span> which lasted: <span id="lowPeriodsTime" style="font-family: Arial; font-size: 100%;"></span> with mean heartrate: <span id="lowPeriodsMeanHR" style="font-family: Arial; font-size: 100%;"></span></div>
+				<div>medium intensity periods: <span id="medPeriodsNumber" style="font-family: Arial; font-size: 100%;"></span> which lasted: <span id="medPeriodsTime" style="font-family: Arial; font-size: 100%;"></span> with mean heartrate: <span id="medPeriodsMeanHR" style="font-family: Arial; font-size: 100%;"></span></div>
+				<div>high intensity periods: <span id="highPeriodsNumber" style="font-family: Arial; font-size: 100%;"></span> which lasted: <span id="highPeriodsTime" style="font-family: Arial; font-size: 100%;"></span> with mean heartrate: <span id="highPeriodsMeanHR" style="font-family: Arial; font-size: 100%;"></span></div>
+				<div>very high intensity periods: <span id="vhighPeriodsNumber" style="font-family: Arial; font-size: 100%;"></span> which lasted: <span id="vhighPeriodsTime" style="font-family: Arial; font-size: 100%;"></span> with mean heartrate: <span id="vhighPeriodsMeanHR" style="font-family: Arial; font-size: 100%;"></span></div>
+				</div>
+			</div>
+		
+		</div>
+			
+		<script src="chartStepsHR.js"></script>	
+	</div>	
+	</body>
+</html>
